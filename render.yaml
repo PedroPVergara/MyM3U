@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: stremio-iptv-addon
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        sync: false
+      - key: CACHE_ENABLED
+        value: true
+      - key: CACHE_TTL_MS
+        value: 21600000
+      - key: MAX_CACHE_ENTRIES
+        value: 300
+      - key: PREFETCH_ENABLED
+        value: true
+      - key: PREFETCH_MAX_BYTES
+        value: 5000000
+      - key: DEBUG_MODE
+        value: false
+      - key: NODE_ENV
+        value: production
